@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "language": "java",
+  "name": "gauge-project",
+  "specs": [
+    "src/test/resources/features"
+  ],
+  "dependencies": {
+    "gauge-java": "0.11.1"
+  },
+  "tags": [
+    "success"
+  ]
+}
+

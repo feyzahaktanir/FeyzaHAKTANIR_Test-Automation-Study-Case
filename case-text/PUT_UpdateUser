@@ -1,0 +1,10 @@
+<requests>
+    <request id="updateUser">
+        <body>
+            {
+                "firstName": "@firstName@",
+                "lastName": "@lastName@",
+            }
+        </body>
+    </request>
+</requests>

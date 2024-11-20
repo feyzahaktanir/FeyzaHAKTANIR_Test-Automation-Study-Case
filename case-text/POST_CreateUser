@@ -1,0 +1,12 @@
+<requests>
+    <request id="createUser">
+        <body>
+            {
+                "firstName": "@firstName@",
+                "lastName": "@lastName@",
+                "username": "@username@",
+                "password": "@password@"
+            }
+        </body>
+    </request>
+</requests>

@@ -1,0 +1,9 @@
+<requests>
+    <request id="patchUser">
+        <body>
+            {
+                "isActive": "@isActive@",
+            }
+        </body>
+    </request>
+</requests>
