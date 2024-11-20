@@ -17,18 +17,17 @@ import java.util.stream.Collectors;
 public class CreateUserSteps {
 
     Response response = TestBaseClass.getResponse();
+    Map<String, String> userDetails;
 
     @Step("Send a POST request to create the user with details: <table>")
     public void sendPostRequestToCreateUser(Table table) throws IOException {
-        TableRow firstRow = table.getTableRows().get(0);
-
-        Map<String, String> userDetails = firstRow.getCellValues()
-                .entrySet()
-                .stream()
-                .collect(Collectors.toMap(
-                        entry -> entry.getKey(),
-                        entry -> entry.getValue()
-                ));
+        userDetails = new HashMap<>();
+        TableRow headerRow = table.getTableRows().get(0);
+        for (int i = 0; i < headerRow.getCellValues().size(); i++) {
+            String key = headerRow.getCellValues().get(i);
+            String value = table.getTableRows().get(1).getCellValues().get(i);
+            userDetails.put(key, value);
+        }
         POST_CreateUser createUserRequest = new POST_CreateUser();
         response = createUserRequest.postCreateUser(
                 userDetails.get("firstName"),
